@@ -1,28 +1,9 @@
-/* ── Responsive layout: desktop vs mobile ── */
-.tc-mobile  { display: none; }
-.tc-desktop { display: block; }
+.tc-mobile  { display: none !important; }
+.tc-desktop { display: block !important; }
 
 @media (max-width: 700px) {
-  .tc-mobile  { display: flex; }
-  .tc-desktop { display: none; }
+  .tc-mobile  { display: flex !important; }
+  .tc-desktop { display: none !important; }
 }
 
-/* ── Smooth card hover ── */
-.tc-mobile > div {
-  transition: box-shadow 0.15s ease, transform 0.1s ease;
-}
-.tc-mobile > div:active {
-  transform: scale(0.98);
-}
-
-/* ── Vaadin AppLayout: hide the side drawer on mobile ── */
-@media (max-width: 700px) {
-  vaadin-app-layout::part(drawer) {
-    width: 100%;
-  }
-}
-
-/* ── General reset helpers ── */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
