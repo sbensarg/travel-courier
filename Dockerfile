@@ -17,9 +17,10 @@ FROM eclipse-temurin:21-jre
 
 WORKDIR /app
 
+# JAR is copied as app.jar — this is what we run
 COPY --from=builder /app/target/*.jar app.jar
 
 EXPOSE 8080
 
-# Let Spring Boot read SERVER_PORT env variable set in Railway
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# app.jar is in /app/app.jar — correct path
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
